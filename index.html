@@ -11,99 +11,102 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="card" styles="width: 18rem;">
-            <div class="card-header">
-                <h1><b>Payment form example</b></h1>
-            </div>
-            <div class="card-body">
-                <form>
-                    <input class="form-control p-3 mb-2 bg-danger bg-success p-2" style="--bs-bg-opacity: .5;"
-                        id="disabledInput" type="text" placeholder="Some fields are missing" disabled>
-                    <div class="row">
-                        <div class="col-5">
-                            <label for="exampleInputcard" class="form-label">Card #</label>
-                            <input type="card" class="form-control" id="exampleInputcard"
-                                placeholder="XXXXXXXXXXXXXXXXX" aria-describedby="emailHelp">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-10 offset-md-1">
+            <div class="card card-outline-secondary">
+                <div class="card-header">
+                    <h3 class="mb-0">Payment form example</h3>
+                </div>
+                <div class="card-body">
+                    <div id="error-msg" class="alert alert-danger">Some fields are missing</div>
+            <form  method="post" action="#">
+                      <div class="row mt-4">
+                        <div class="col-sm-5 pb-3">
+                            <label for="exampleAccount">Card #</label> 
+                            <input class="form-control" id="exampleAccount" placeholder="XXXXXXXXXXXXXXXX" type="text">
                         </div>
-                        <div class="col-3">
-                            <label for="exampleInputPassword1" class="form-label">CVC #</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="0000">
+                        <div class="col-sm-3 pb-3">
+                            <label for="exampleCtrl">CVC #</label> 
+                            <input class="form-control" id="exampleCtrl" placeholder="0000" type="text">
                         </div>
-                        <div class="col-4">
-                            <label for="exampleInputPassword1" class="form-label">Amount</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Amount">
-                        </div>
-                        <div class="col-6">
-                            <label for="exampleInputcard" class="form-label">Firt Name</label>
-                            <input type="card" class="form-control" id="exampleInputcard" aria-describedby="emailHelp">
-                        </div>
-                        <div class="col-6">
-                            <label for="exampleInputcard" class="form-label">Last Name</label>
-                            <input type="card" class="form-control" id="exampleInputcard" aria-describedby="emailHelp">
-                        </div>
-                        <div class="col-6">
-                            <label for="exampleInputcard" class="form-label">City</label>
-                            <input type="card" class="form-control" id="exampleInputcard" aria-describedby="emailHelp">
-                        </div>
-                        <div class="col-md-3">
-                            <label for="inputState" class="form-label">State</label>
-                            <select id="inputState" class="form-select">
-                                <option selected>Pick a State</option>
-                                <option>Florida</option>
-                                <option>Texa</option>
-                                <option>California</option>
-                            </select>
-                        </div>
-                        <div class="col-md-3">
-                            <label for="inputState" class="form-label">Postal Code</label>
-                            <select id="inputState" class="form-select">
-                                <option selected></option>
-                            </select>
-                        </div>
-                        <div class="col-5">
-                            We accept:
-                            <div class="bg-secondary d-flex justify-content-center">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                        id="inlineRadio1" value="option1">
-                                    <label class="form-check-label" for="inlineRadio1"><i
-                                            class="fa-brands fa-cc-mastercard"></i></label>
+                        <div class="col-sm-4 pb-3">
+                            <label for="exampleAmount">Amount</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fas fa-dollar-sign"></i>
                                 </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                        id="inlineRadio2" value="option2">
-                                    <label class="form-check-label" for="inlineRadio2"><i
-                                            class="fa-brands fa-cc-visa"></i></label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                        id="inlineRadio3" value="option3">
-                                    <label class="form-check-label" for="inlineRadio3"><i
-                                            class="fa-brands fa-bitcoin"></i></label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                        id="inlineRadio3" value="option3">
-                                    <label class="form-check-label" for="inlineRadio3"><i
-                                            class="fa-brands fa-cc-paypal"></i></label>
-                                </div>
+                                <input class="form-control" id="exampleAmount" placeholder="Amount" type="number">
                             </div>
                         </div>
-                        <div class="col-6">
-                            <label class="fw-bold fs-5" for="firstName" class="form-label">Message</label>
-                            <textarea class="form-control" placeholder="" id="floatingTextarea"
-                                style="height: 100px"></textarea>
-                            <label for="floatingTextarea">Add any notes here. </label>
+                        <div class="col-sm-6 pb-3">
+                            <label for="exampleFirst">First Name</label> 
+                            <input class="form-control" id="exampleFirst" type="text">
                         </div>
-                        <div class="card-footer text-end p-1 ">
-                            <button type="submit" class="btn btn-secondary">Cancel</button>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                        <div class="col-sm-6 pb-3">
+                            <label for="exampleLast">Last Name</label> 
+                            <input class="form-control" id="exampleLast" type="text">
                         </div>
-                </form>
+                        <div class="col-sm-6 pb-3">
+                            <label for="exampleCity">City</label> <input class="form-control" id="exampleCity" type="text">
+                        </div>
+                        <div class="col-sm-3 pb-3">
+                            <label for="exampleSt">State</label> <select class="form-control custom-select" id="exampleSt">
+                            <option class="text-white bg-warning">
+                                Pick a state
+                            </option>
+                                colorado
+                            <option >
+                                Florida
+                            </option>
+                            <option>
+                                Texa
+                            </option>
+                            <option>
+                                California
+                            </option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3 pb-3">
+                            <label for="exampleZip">Postal Code</label> 
+                            <input class="form-control" id="exampleZip" type="text">
+                        </div>
+                        <div class="col-md-6 pb-3">
+                            <p for="exampleAccount">We accept:</p>
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-secondary">
+                                    <input autocomplete="off" checked id="blue" name="options" type="radio">
+                                    <i class="fab fa-cc-mastercard"></i>
+                                </label> 
+                                <label class="btn btn-secondary">
+                                    <input autocomplete="off" id="red" name="options" type="radio">
+                                    <i class="fab fa-cc-visa"></i>
+                                </label> 
+                                <label class="btn btn-secondary">
+                                    <input autocomplete="off" id="green" name="options" type="radio">
+                                    <i class="fab fa-cc-diners-club"></i>
+                                </label> 
+                                <label class="btn btn-secondary">
+                                    <input autocomplete="off" id="yellow" name="options" type="radio">
+                                    <i class="fab fa-cc-amex"></i>
+                                </label> 
+                            </div>
+                        </div>
+                        <div class="col-md-6 pb-3">
+                            <label for="exampleMessage">Message</label> 
+                            <textarea class="form-control" id="complexExampleMessage" rows="3"></textarea> 
+                            <small class="text-muted">Add any notes here.</small>
+                        </div>
+                    </div
+            </form>
+                </div>
+                <div class="card-footer d-flex justify-content-end">
+                    <div class="float-right">
+              <button class="btn btn-secondary" type="reset">Cancel</button> 
+                        <button id="sendForm" class="btn btn-primary" type="button" />Send</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 
 
